@@ -245,6 +245,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import { useEffect} from "react";
+
 import { 
   Users, 
   TrendingUp, 
@@ -335,6 +337,9 @@ const CRM = () => {
       image: "/crm/Stock.jpeg"
     }
   ];
+  useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, CheckCircle, Users, Building, Shield, Zap, Globe, Award } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import { useEffect} from "react";
 
 const Home = () => {
   const features = [
@@ -44,6 +44,11 @@ const Home = () => {
     { number: "50+", label: "ERP Modules" },
     { number: "24/7", label: "Support" }
   ];
+
+  useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, []);
+
 
   return (
     <div className="min-h-screen">

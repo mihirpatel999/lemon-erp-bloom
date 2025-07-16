@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useEffect} from "react";
 import { 
   Globe, 
   Smartphone, 
@@ -61,6 +62,9 @@ const WebDevelopment = () => {
     "Fast Loading Speed",
     "Regular Backups & Updates"
   ];
+  useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, []);
 
 
   return (

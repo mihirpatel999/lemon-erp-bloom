@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Users, Target, Eye, Award, Clock, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect} from "react";
 
 const About = () => {
   const values = [
@@ -37,6 +38,10 @@ const About = () => {
     { number: "24/7", label: "Technical Support" },
     { number: "10+", label: "Years Experience" }
   ];
+  useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}, []);
+
 
   return (
     <div className="min-h-screen">

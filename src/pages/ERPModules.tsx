@@ -107,10 +107,9 @@ const ERPModules = () => {
     "Bluezone Vitrified Pvt Ltd"
   ];
   
-   useEffect(() => {
-  window.scrollTo(0, 0); // Scroll to top on load
+ useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }, []);
-
 
 
   return (
