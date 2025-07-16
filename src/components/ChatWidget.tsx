@@ -63,7 +63,7 @@ const ChatWidget = () => {
     }
      
 
-    return "Thank you for your question! For detailed information, please call us at +91 9723822139 or visit our Contact page.";
+    return "Thank you for your question! For detailed information, please call us at +91 9979747563  or visit our Contact page.";
   };
 
   const sendMessage = () => {
