@@ -18,8 +18,8 @@ const Footer = () => {
                 />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">Lemon Software</h3>
-                <p className="text-sm text-gray-400">ERP Solutions</p>
+                <h3 className="text-xl font-bold text-white">Lemon Software Solution</h3>
+                <p className="text-sm text-gray-400">Complate ERP Solutions</p>
               </div>
             </div>
             <p className="text-gray-300 text-sm">
@@ -60,7 +60,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="text-gray-300 text-sm">+91 9723822139</span>
+                <span className="text-gray-300 text-sm">+91 9979747563</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
@@ -80,7 +80,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Lemon Software. All rights reserved. Trusted by major tile manufacturers in Morbi.
+            © 2024 Lemon Software. All rights reserved. Trusted by major tile manufacturers in India.
           </p>
         </div>
       </div>

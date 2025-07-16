@@ -14,6 +14,8 @@ import {
   Globe,
   CheckCircle
 } from "lucide-react";
+import { useState, useEffect } from "react";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -93,6 +95,11 @@ const Contact = () => {
     { icon: Globe, label: "100%", desc: "Success Rate" },
     { icon: CheckCircle, label: "24/7", desc: "Support" }
   ];
+
+   useEffect(() => {
+  window.scrollTo(0, 0); // Scroll to top on load
+}, []);
+
 
   return (
     <div className="min-h-screen">

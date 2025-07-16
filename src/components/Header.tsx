@@ -34,8 +34,8 @@ const Header = () => {
               />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">Lemon Software</h1>
-              <p className="text-xs text-muted-foreground">ERP Solutions</p>
+              <h1 className="text-xl font-bold text-foreground">Lemon Software Solution</h1>
+              <p className="text-xs text-muted-foreground">Complate ERP Solutions</p>
             </div>
           </Link>
 
@@ -56,7 +56,7 @@ const Header = () => {
             ))}
             <Button variant="gradient" size="sm" className="ml-4">
               <Phone className="w-4 h-4 mr-2" />
-              +91 9723822139
+              +91 9979747563
             </Button>
           </div>
 
@@ -91,7 +91,7 @@ const Header = () => {
               <div className="px-3 py-2">
                 <Button variant="gradient" size="sm" className="w-full">
                   <Phone className="w-4 h-4 mr-2" />
-                  +91 9723822139
+                  +91 9979747563
                 </Button>
               </div>
             </div>
