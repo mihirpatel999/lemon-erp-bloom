@@ -90,12 +90,12 @@ const ERPModules = () => {
   ];
 
   const industries = [
-    "Ceramic Tile Manufacturing",
-    "Vitrified Tile Production", 
-    "Wall Tile Manufacturing",
-    "Floor Tile Production",
-    "Decorative Tile Making",
-    "Industrial Ceramics"
+    "Crystal Ceramic Industries Ltd",
+    "Adicon Ceramica Tiles  Pvt Ltd", 
+    "Ara Tiles Private Limited",
+    "Agl Sanitaryware Pvt Ltd",
+    "Future Ceramic Pvt Ltd",
+    "Bluezone Vitrified Pvt Ltd"
   ];
 
   return (

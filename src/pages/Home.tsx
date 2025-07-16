@@ -40,7 +40,7 @@ const Home = () => {
   const stats = [
     { number: "10+", label: "Years Experience" },
     { number: "10+", label: "Happy Clients" },
-    { number: "100+", label: "ERP Modules" },
+    { number: "50+", label: "ERP Modules" },
     { number: "24/7", label: "Support" }
   ];
 
@@ -130,25 +130,43 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="shadow-medium">
-              <CardContent className="p-6 text-center">
-                <div className="w-20 h-20 bg-gradient-primary rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-2xl">CC</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Crystal Ceramic Industries</h3>
-                <p className="text-muted-foreground">Leading ceramic manufacturer using our complete ERP solution</p>
-              </CardContent>
-            </Card>
+           <Card className="shadow-medium">
+  <CardContent className="p-6 text-center">
+    {/* Logo Image */}
+    <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center mx-auto mb-4 shadow">
+      <img
+        src="/lovable-uploads/crystal.png"
+        alt="Crystal Logo"
+        className="w-16 h-16 object-contain"
+      />
+    </div>
 
-            <Card className="shadow-medium">
-              <CardContent className="p-6 text-center">
-                <div className="w-20 h-20 bg-gradient-secondary rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-2xl">10+</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Morbi Factories</h3>
-                <p className="text-muted-foreground">Tile and ceramic factories actively using our ERP systems</p>
-              </CardContent>
-            </Card>
+    {/* Text Content */}
+    <h3 className="text-xl font-semibold mb-2">Crystal Ceramic Industries</h3>
+    <p className="text-muted-foreground">
+      Leading ceramic manufacturer using our complete ERP solution
+    </p>
+  </CardContent>
+</Card>
+
+<Card className="shadow-medium">
+  <CardContent className="p-6 text-center">
+    {/* Logo Image Replacing "10+" */}
+    <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center mx-auto mb-4 shadow">
+      <img
+        src="/lovable-uploads/adicon.png"
+        alt="Morbi Factories Logo"
+        className="w-16 h-16 object-contain"
+      />
+    </div>
+
+    {/* Text Content */}
+    <h3 className="text-xl font-semibold mb-2">Morbi Factories</h3>
+    <p className="text-muted-foreground">
+      Tile and ceramic factories actively using our ERP systems
+    </p>
+  </CardContent>
+</Card>
 
             <Card className="shadow-medium">
               <CardContent className="p-6 text-center">
