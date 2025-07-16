@@ -19,7 +19,7 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white">Lemon Software Solution</h3>
-                <p className="text-sm text-gray-400">Complate ERP Solutions</p>
+                <p className="text-sm text-gray-400">Complete ERP Solutions</p>
               </div>
             </div>
             <p className="text-gray-300 text-sm">

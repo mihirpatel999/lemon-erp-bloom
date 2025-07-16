@@ -14,7 +14,7 @@ const Home = () => {
     {
       icon: Users,
       title: "Trusted by Major Factories",
-      description: "Serving leading ceramic and tile manufacturers in Morbi region"
+      description: "Serving leading ceramic and tiles manufacturers in Morbi region"
     },
     {
       icon: Shield,
@@ -59,7 +59,7 @@ const Home = () => {
           <div className="text-center animate-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Leading ERP Solutions for
-              <span className="block text-yellow-300">Tile & Ceramic Industry</span>
+              <span className="block text-yellow-300">Tiles & Ceramic Industry</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
               Trusted by major manufacturers in Morbi with 10+ years of experience. 
@@ -99,10 +99,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Why Choose Lemon Software?
+              Why Choose Lemon Software Solution ?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We provide comprehensive ERP solutions tailored for the tile and ceramic industry,
+              We provide comprehensive ERP solutions tailored for the tiles and ceramic industry,
               backed by years of experience and trusted by leading manufacturers.
             </p>
           </div>
@@ -131,7 +131,7 @@ const Home = () => {
               Trusted by Industry Leaders
             </h2>
             <p className="text-xl text-muted-foreground">
-              Major ceramic and tile manufacturers in Morbi trust our ERP solutions
+              Major ceramic and tiles manufacturers in Morbi trust our ERP solutions
             </p>
           </div>
 
@@ -169,7 +169,7 @@ const Home = () => {
     {/* Text Content */}
     <h3 className="text-xl font-semibold mb-2">Morbi Factories</h3>
     <p className="text-muted-foreground">
-      Tile and ceramic factories actively using our ERP systems
+      Tiles and ceramic factories actively using our ERP systems
     </p>
   </CardContent>
 </Card>
@@ -194,7 +194,7 @@ const Home = () => {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Join Crystal Ceramic Industries and other leading tile manufacturers who trust Lemon Software for their ERP needs.
+            Join Crystal Ceramic Industries and other leading tiles manufacturers who trust Lemon Software Solution for their ERP needs.
             Get a free consultation and see how we can help your business grow.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
