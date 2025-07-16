@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, Building, MapPin, Quote, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect} from "react";
 
 const Clients = () => {
   const testimonials = [
@@ -65,6 +66,13 @@ const Clients = () => {
     "Better cost control and profitability",
     "Enhanced customer satisfaction"
   ];
+
+
+     useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top on load
+  }, []);
+  
+  
 
   return (
     <div className="min-h-screen">

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect} from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,7 +15,7 @@ import {
   Globe,
   CheckCircle
 } from "lucide-react";
-import { useState, useEffect } from "react";
+
 
 
 const Contact = () => {
