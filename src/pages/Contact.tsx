@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,7 +15,8 @@ import {
   CheckCircle
 } from "lucide-react";
 
-
+// ... existing code ...
+const API_URL = import.meta.env.VITE_API_URL || "https://lemon-software-website.onrender.com";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -29,22 +30,35 @@ const Contact = () => {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        service: "",
-        message: ""
+    try {
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
       });
-    }, 3000);
+      if (response.ok) {
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            company: "",
+            service: "",
+            message: ""
+          });
+        }, 3000);
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      alert("Failed to send message. Please try again.");
+    }
   };
+// ... existing code ...
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -57,25 +71,25 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Office Location",
-      details: ["Ahmedabad, Gujarat, India", "Serving clients across India"],
+      details: ["Ahmedabad, Gujarat, India", "Serving clients across Gujarat"],
       color: "text-primary"
     },
     {
       icon: Phone,
       title: "Phone Number",
-      details: ["+919979747563", "Available 10 AM - 6 PM"],
+      details: ["+919723822139", "Available 9 AM - 7 PM"],
       color: "text-secondary"
     },
     {
       icon: Mail,
       title: "Email Address",
-      details: ["lemonsoftinfo@gmail.com"],
+      details: ["info@lemonsoftware.in", "support@lemonsoftware.in"],
       color: "text-primary"
     },
     {
       icon: Clock,
       title: "Business Hours",
-      details: ["Monday - Friday: 10:00 AM - 6:00 PM", "Saturday,Sunday: By appointment"],
+      details: ["Monday - Saturday: 9:00 AM - 7:00 PM", "Sunday: By appointment"],
       color: "text-secondary"
     }
   ];
@@ -95,10 +109,6 @@ const Contact = () => {
     { icon: Globe, label: "100%", desc: "Success Rate" },
     { icon: CheckCircle, label: "24/7", desc: "Support" }
   ];
-
-useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}, []);
 
   return (
     <div className="min-h-screen">
@@ -166,7 +176,7 @@ useEffect(() => {
                             name="phone"
                             value={formData.phone}
                             onChange={handleInputChange}
-                            placeholder="+919979747563"
+                            placeholder="+919723822139"
                             required
                             className="transition-all focus:ring-2 focus:ring-primary"
                           />
@@ -277,7 +287,7 @@ useEffect(() => {
                     <p className="mb-4 opacity-90">Call us directly for urgent requirements</p>
                     <Button variant="outline" size="lg" className="bg-white/10 border-white text-white hover:bg-white hover:text-gray-900">
                       <Phone className="w-4 h-4 mr-2" />
-                      +919979747563
+                      +919723822139
                     </Button>
                   </CardContent>
                 </Card>
@@ -306,7 +316,7 @@ useEffect(() => {
                 <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
                   <Building className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Gujarat</h3>
+                <h3 className="text-xl font-semibold mb-2">Ahmedabad</h3>
                 <p className="text-muted-foreground">Our headquarters and main development center</p>
               </CardContent>
             </Card>
@@ -316,7 +326,7 @@ useEffect(() => {
                 <div className="w-16 h-16 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                   <MapPin className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Rajasthan</h3>
+                <h3 className="text-xl font-semibold mb-2">Morbi</h3>
                 <p className="text-muted-foreground">Major client base in the ceramic capital of India</p>
               </CardContent>
             </Card>
@@ -326,8 +336,8 @@ useEffect(() => {
                 <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
                   <Globe className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">All India</h3>
-                <p className="text-muted-foreground">Serving manufacturing businesses across the All Our India</p>
+                <h3 className="text-xl font-semibold mb-2">All Gujarat</h3>
+                <p className="text-muted-foreground">Serving manufacturing businesses across the state</p>
               </CardContent>
             </Card>
           </div>

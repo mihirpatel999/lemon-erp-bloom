@@ -45,16 +45,18 @@ const ERPModules = () => {
       description: "Optimize production schedules, track work orders, and manage production capacity for tile manufacturing.",
       features: ["Production scheduling", "Work order management", "Capacity planning", "Production cost tracking"]
     },
-    {
-       icon: ClipboardCheck, // You can change icon if needed
-       title: "Account Management",
-       description: "Manage your customer accounts, vendors, billing history, and outstanding balances all in one centralized ERP module.",
-       features: [
-       "Customer & vendor accounts",
-        "Credit/debit note tracking",
-        "Ledger summary",
-        "Aging analysis reports"
-    },
+   {
+  icon: ClipboardCheck,
+  title: "Account Management",
+  description: "Manage your customer accounts, vendors, billing history, and outstanding balances all in one centralized ERP module.",
+  features: [
+    "Customer & vendor accounts",
+    "Credit/debit note tracking",
+    "Ledger summary",
+    "Aging analysis reports"
+  ]
+},
+
     {
       icon: DollarSign,
       title: "Financial Management",
