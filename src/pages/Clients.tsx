@@ -13,8 +13,8 @@ const Clients = () => {
       rating: 5,
       testimonial: "LEMON SOFTWARE SOLUTION's ERP solution completely transformed our production planning and inventory management. We've seen 30% improvement in efficiency since implementation.",
       contact: "J.R.Patel",
-      designation: "Production Manager",
-      modules: ["Inventory", "Production", "Quality Control", "Sales"]
+      designation: "Management Head",
+      modules: ["Complete ERP Suite","Inventory", "Production", "Quality Control", "Sales"]
     },
     {
       company: "Adicon Ceramica Tiles Private Limited",
@@ -22,8 +22,8 @@ const Clients = () => {
       location: "Morbi, Gujarat",
       rating: 5,
       testimonial: "The custom ERP modules perfectly fit our business needs. The support team is excellent and always available when needed. Highly recommended!",
-      contact: "Priya Shah",
-      designation: "Operations Head",
+      contact: "Sarthak Patel",
+      designation: "M.D",
       modules: ["Complete ERP Suite", "Financial Management", "HR"]
     },
     {
@@ -32,9 +32,9 @@ const Clients = () => {
       location: "Jaipur, Rajasthan",
       rating: 5,
       testimonial: "Fast deployment and minimal business disruption. The system was up and running within 2 weeks. ROI was visible within 3 months.",
-      contact: "Amit Kumar",
-      designation: "CEO",
-      modules: ["Sales", "Purchase", "Inventory", "Analytics"]
+      contact: "Subham Bajya",
+      designation: "Management Head",
+      modules: ["Complete ERP Suite","Sales", "Purchase", "Inventory", "Analytics"]
     }
   ];
 
