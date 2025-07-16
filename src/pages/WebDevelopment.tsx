@@ -48,26 +48,6 @@ const WebDevelopment = () => {
     }
   ];
 
-  const portfolioSites = [
-    {
-      client: "Crystal Tiles",
-      type: "Corporate Website",
-      description: "Complete business website with product catalog and dealer network information",
-      features: ["Product showcase", "Dealer locator", "Company history", "Contact forms"]
-    },
-    {
-      client: "Morbi Ceramics Ltd",
-      type: "E-commerce Platform",
-      description: "Online tile ordering system integrated with ERP for seamless operations",
-      features: ["Online catalog", "Price calculator", "Order management", "ERP integration"]
-    },
-    {
-      client: "Tile Master Industries",
-      type: "Professional Portfolio",
-      description: "Showcase website highlighting premium tile collections and installations",
-      features: ["Gallery showcase", "Project portfolio", "Installation guides", "Client testimonials"]
-    }
-  ];
 
   const webFeatures = [
     "Professional Domain & Hosting Setup",
@@ -214,44 +194,7 @@ const WebDevelopment = () => {
         </div>
       </section>
 
-      {/* Portfolio */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Our Website Portfolio
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Successful website projects for tile manufacturers and our ERP clients.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolioSites.map((site, index) => (
-              <Card key={index} className="shadow-medium hover:shadow-large transition-all duration-300 animate-slide-in-right" style={{ animationDelay: `${index * 0.2}s` }}>
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-gradient-secondary rounded-lg flex items-center justify-center mb-4">
-                    <span className="text-white font-bold text-xl">{site.client.charAt(0)}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{site.client}</h3>
-                  <p className="text-primary font-medium text-sm mb-3">{site.type}</p>
-                  <p className="text-muted-foreground mb-4">{site.description}</p>
-                  <div className="space-y-2">
-                    {site.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-muted-foreground">
-                        <CheckCircle className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
+ 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-hero text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
