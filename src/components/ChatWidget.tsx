@@ -24,15 +24,14 @@ const ChatWidget = () => {
 
   const quickResponses = {
     location: "Lemon Software is based in Ahmedabad, Gujarat.",
-    contact: "You can reach us at +91 9723822139.",
+    contact: "You can reach us at +91  9979747563.",
     website: "Yes, we build custom websites for our clients along with ERP solutions.",
     erp: "Yes, we specialize in ERP solutions for tile factories and other manufacturing businesses.",
     experience: "We have 10+ years of experience in ERP development.",
     clients: "We serve major ceramic factories in Morbi, including Crystal Tiles.",
-    modules: "Our ERP includes Inventory, Sales, Purchase, Production, Quality Control, and more modules.",
+    modules: "Our ERP includes Inventory, Sales, Purchase, Production, Account Management, and more modules.",
     deployment: "We offer fast deployment with secure and trusted systems.",
-    kon:" hi hu vagesh bhai from amd.",
-    dhruv :"Hu dhulo Ranip do don form S.k Ha maru saberkandha ha moj moj ."
+   
   };
 
   const getResponse = (input: string): string => {
@@ -63,13 +62,7 @@ const ChatWidget = () => {
       return quickResponses.deployment;
     }
      
-  if (query.includes("kon")) {
-    return quickResponses.kon;
-  }
 
-  if (query.includes("dhruv")) {
-    return quickResponses.dhruv;
-  }
     return "Thank you for your question! For detailed information, please call us at +91 9723822139 or visit our Contact page.";
   };
 
