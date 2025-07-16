@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -96,10 +97,9 @@ const Contact = () => {
     { icon: CheckCircle, label: "24/7", desc: "Support" }
   ];
 
-   useEffect(() => {
-  window.scrollTo(0, 0); // Scroll to top on load
+useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }, []);
-
 
   return (
     <div className="min-h-screen">
