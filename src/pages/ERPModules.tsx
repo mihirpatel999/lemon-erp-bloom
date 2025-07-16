@@ -18,11 +18,6 @@ import {
 import { Link } from "react-router-dom";
 
 
-   useEffect(() => {
-  window.scrollTo(0, 0); // Scroll to top on load
-}, []);
-
-
 
 const ERPModules = () => {
   const coreModules = [
@@ -105,6 +100,12 @@ const ERPModules = () => {
     "Future Ceramic Pvt Ltd",
     "Bluezone Vitrified Pvt Ltd"
   ];
+  
+   useEffect(() => {
+  window.scrollTo(0, 0); // Scroll to top on load
+}, []);
+
+
 
   return (
     <div className="min-h-screen">
