@@ -8,33 +8,33 @@ const Home = () => {
   const features = [
     {
       icon: Building,
-      title: "10+ Years Experience",
-      description: "Decade of expertise in ERP development for manufacturing industries"
+      title: "GST Compliant Billing Software",
+      description: "Complete GST billing solutions for Indian businesses with automatic tax calculations and compliance"
     },
     {
       icon: Users,
-      title: "Trusted by Major Factories",
-      description: "Serving leading ceramic and tiles manufacturers in Morbi region"
+      title: "Inventory Management System",
+      description: "Advanced stock management with real-time tracking for small and medium enterprises"
     },
     {
       icon: Shield,
-      title: "Custom ERP Modules",
-      description: "Tailored solutions designed for your specific business needs"
+      title: "Custom ERP Development",
+      description: "Tailored ERP solutions designed specifically for Indian business requirements"
     },
     {
       icon: Globe,
-      title: "Website Development",
-      description: "Complete digital solutions including custom website development"
+      title: "Accounting & Financial Software",
+      description: "Complete accounting solutions with profit-loss statements and balance sheets"
     },
     {
       icon: Zap,
-      title: "Fast Deployment",
-      description: "Quick implementation with minimal business disruption"
+      title: "Quick Implementation",
+      description: "Fast deployment within 7-15 days with complete training and support"
     },
     {
       icon: Award,
-      title: "Secure & Trusted",
-      description: "Enterprise-grade security and reliability for your data"
+      title: "Affordable & Reliable",
+      description: "Cost-effective software solutions with 24/7 customer support for Indian SMEs"
     }
   ];
 
@@ -48,19 +48,37 @@ const Home = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     
+    // SEO Meta tags
+    document.title = "Best ERP Software for Indian Businesses | GST Billing & Inventory Management - Lemon Software Solution";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Leading ERP software company in India providing GST billing, inventory management, accounting solutions for small & medium businesses. Custom ERP development with 10+ years experience.');
+    }
+    
     // Add structured data for homepage
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.textContent = JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "Lemon Software Solution - ERP Software for Tile Industry",
-      "description": "Leading ERP software provider for ceramic and tile manufacturers in Morbi and Ahmedabad with 10+ years experience",
+      "@type": "Organization",
+      "name": "Lemon Software Solution",
+      "description": "Leading ERP software company providing GST billing, inventory management, and custom software solutions for Indian businesses",
       "url": "https://lemonsoftwaresolution.com/",
-      "mainEntity": {
-        "@type": "Organization",
-        "name": "Lemon Software Solution",
-        "description": "10+ years experience serving Crystal Tiles, Adicon Ceramica and 50+ ceramic manufacturers"
+      "logo": "https://lemonsoftwaresolution.com/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9723822139",
+        "contactType": "sales"
+      },
+      "areaServed": "India",
+      "serviceType": ["ERP Software", "GST Billing Software", "Inventory Management", "Accounting Software", "Custom Software Development"],
+      "foundingDate": "2014",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Morbi",
+        "addressRegion": "Gujarat",
+        "addressCountry": "IN"
       }
     });
     document.head.appendChild(script);
@@ -81,12 +99,12 @@ const Home = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Leading ERP Solutions for
-              <span className="block text-yellow-300">Tiles & Ceramic Industry</span>
+              Best ERP Software for
+              <span className="block text-yellow-300">Indian Small & Medium Businesses</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
-              Trusted by major manufacturers in Morbi with 10+ years of experience. 
-              Custom ERP modules designed for your business success.
+              Complete GST Billing, Inventory Management & Accounting Software Solutions. 
+              Trusted by 50+ Indian businesses with 10+ years of proven expertise.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="xl" asChild>
@@ -122,11 +140,11 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Why Choose Lemon Software Solution ?
+              Complete Software Solutions for Indian SMEs
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We provide comprehensive ERP solutions tailored for the tiles and ceramic industry,
-              backed by years of experience and trusted by leading manufacturers.
+              From GST billing to inventory management, we provide affordable and reliable software solutions 
+              specifically designed for small and medium enterprises across India.
             </p>
           </div>
 
@@ -214,11 +232,11 @@ const Home = () => {
       <section className="py-20 bg-gradient-hero text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Transform Your Business?
+            Ready to Digitize Your Indian Business?
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Join Crystal Ceramic Industries and other leading tiles manufacturers who trust Lemon Software Solution for their ERP needs.
-            Get a free consultation and see how we can help your business grow.
+            Join 50+ successful Indian businesses using our GST-compliant ERP software. 
+            Get a free consultation and discover how our affordable solutions can boost your productivity.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="xl" asChild>
