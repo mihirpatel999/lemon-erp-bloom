@@ -110,14 +110,98 @@ const ERPModules = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     
-    // Update page title for SEO
-    document.title = "ERP Modules - Inventory, Sales, Production | Lemon Software Solution";
+    // Meta Tags
+    document.title = "ERP Modules Inventory Sales Production | Tile Manufacturing Gujarat";
     
-    // Add page-specific meta description
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute('content', 'Comprehensive ERP modules for tile industry - Inventory Management, Sales, Production Planning, Financial Management. Trusted by Crystal Tiles & 50+ manufacturers.');
+      metaDesc.setAttribute('content', 'Complete ERP modules for tile manufacturers - Inventory, Sales, Production, Financial Management. Used by Crystal Tiles & 50+ Gujarat ceramic companies.');
     }
+
+    // Canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://lemonsoftwaresolution.com/erp-modules');
+
+    // Open Graph Tags
+    const updateMetaTag = (property: string, content: string) => {
+      let meta = document.querySelector(`meta[property="${property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    updateMetaTag('og:title', 'ERP Modules Inventory Sales Production | Tile Manufacturing Gujarat');
+    updateMetaTag('og:description', 'Complete ERP modules for tile manufacturers - Inventory, Sales, Production, Financial Management.');
+    updateMetaTag('og:image', 'https://lemonsoftwaresolution.com/og-image-erp.jpg');
+    updateMetaTag('og:url', 'https://lemonsoftwaresolution.com/erp-modules');
+    updateMetaTag('og:type', 'product');
+
+    // Twitter Card Tags
+    const updateTwitterTag = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    updateTwitterTag('twitter:card', 'summary_large_image');
+    updateTwitterTag('twitter:title', 'ERP Modules Inventory Sales Production | Tile Manufacturing Gujarat');
+    updateTwitterTag('twitter:description', 'Complete ERP modules for tile manufacturers - Inventory, Sales, Production, Financial Management.');
+    updateTwitterTag('twitter:image', 'https://lemonsoftwaresolution.com/og-image-erp.jpg');
+
+    // JSON-LD Structured Data
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Lemon ERP Modules",
+      "description": "Complete ERP solution designed specifically for tile and ceramic manufacturing industry",
+      "url": "https://lemonsoftwaresolution.com/erp-modules",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web-based",
+      "offers": {
+        "@type": "Offer",
+        "description": "Modular ERP Solutions for Tile Industry",
+        "availability": "https://schema.org/InStock"
+      },
+      "featureList": [
+        "Inventory Management",
+        "Sales Management",
+        "Purchase Management", 
+        "Production Planning",
+        "Account Management",
+        "Financial Management"
+      ],
+      "applicationSubCategory": "ERP Software",
+      "provider": {
+        "@type": "Organization",
+        "name": "Lemon Software Solution"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "50"
+      }
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
   }, []);
 
 

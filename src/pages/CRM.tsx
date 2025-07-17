@@ -340,14 +340,99 @@ const CRM = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     
-    // Update page title for SEO
-    document.title = "CRM Software - Business Management Suite | Lemon Software Solution";
+    // Meta Tags
+    document.title = "CRM Business Management Software | Sales Expense Inventory Gujarat";
     
-    // Add page-specific meta description
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute('content', 'Complete CRM & business management software with sales tracking, expense management, inventory control. Designed for tile industry by Lemon Software Solution.');
+      metaDesc.setAttribute('content', 'All-in-one CRM & business management software. Sales tracking, expense management, inventory control for tile manufacturers in Gujarat.');
     }
+
+    // Canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://lemonsoftwaresolution.com/crm');
+
+    // Open Graph Tags
+    const updateMetaTag = (property: string, content: string) => {
+      let meta = document.querySelector(`meta[property="${property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    updateMetaTag('og:title', 'CRM Business Management Software | Sales Expense Inventory Gujarat');
+    updateMetaTag('og:description', 'All-in-one CRM & business management software. Sales tracking, expense management, inventory control.');
+    updateMetaTag('og:image', 'https://lemonsoftwaresolution.com/og-image-crm.jpg');
+    updateMetaTag('og:url', 'https://lemonsoftwaresolution.com/crm');
+    updateMetaTag('og:type', 'product');
+
+    // Twitter Card Tags
+    const updateTwitterTag = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    updateTwitterTag('twitter:card', 'summary_large_image');
+    updateTwitterTag('twitter:title', 'CRM Business Management Software | Sales Expense Inventory Gujarat');
+    updateTwitterTag('twitter:description', 'All-in-one CRM & business management software. Sales tracking, expense management, inventory control.');
+    updateTwitterTag('twitter:image', 'https://lemonsoftwaresolution.com/og-image-crm.jpg');
+
+    // JSON-LD Structured Data
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Lemon CRM Business Management Suite",
+      "description": "All-in-one business management solution with CRM, sales tracking, expense management, and inventory control",
+      "url": "https://lemonsoftwaresolution.com/crm",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web-based, Mobile",
+      "featureList": [
+        "Customer Management",
+        "Sales Pipeline",
+        "Task & Appointment Scheduling",
+        "Expense Tracking",
+        "Live Stock Reports",
+        "Analytics & Reporting"
+      ],
+      "screenshot": [
+        "https://lemonsoftwaresolution.com/crm/Dashbord.jpeg",
+        "https://lemonsoftwaresolution.com/crm/Expence.jpeg",
+        "https://lemonsoftwaresolution.com/crm/Task.jpeg",
+        "https://lemonsoftwaresolution.com/crm/Stock.jpeg"
+      ],
+      "applicationSubCategory": "CRM Software",
+      "provider": {
+        "@type": "Organization",
+        "name": "Lemon Software Solution"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "500"
+      }
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
   }, []);
 
   return (

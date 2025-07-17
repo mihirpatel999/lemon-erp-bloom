@@ -63,7 +63,115 @@ const WebDevelopment = () => {
     "Regular Backups & Updates"
   ];
   useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    // Meta Tags
+    document.title = "Website Development Tile Manufacturers | Professional Web Design Gujarat";
+    
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Professional website development for tile manufacturers in Gujarat. Custom designs, mobile responsive, SEO optimized. Showcase your tiles online & grow business.');
+    }
+
+    // Canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://lemonsoftwaresolution.com/website-development');
+
+    // Open Graph Tags
+    const updateMetaTag = (property: string, content: string) => {
+      let meta = document.querySelector(`meta[property="${property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    updateMetaTag('og:title', 'Website Development Tile Manufacturers | Professional Web Design Gujarat');
+    updateMetaTag('og:description', 'Professional website development for tile manufacturers in Gujarat. Custom designs, mobile responsive, SEO optimized.');
+    updateMetaTag('og:image', 'https://lemonsoftwaresolution.com/og-image-web.jpg');
+    updateMetaTag('og:url', 'https://lemonsoftwaresolution.com/website-development');
+    updateMetaTag('og:type', 'service');
+
+    // Twitter Card Tags
+    const updateTwitterTag = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    updateTwitterTag('twitter:card', 'summary_large_image');
+    updateTwitterTag('twitter:title', 'Website Development Tile Manufacturers | Professional Web Design Gujarat');
+    updateTwitterTag('twitter:description', 'Professional website development for tile manufacturers in Gujarat. Custom designs, mobile responsive, SEO optimized.');
+    updateTwitterTag('twitter:image', 'https://lemonsoftwaresolution.com/og-image-web.jpg');
+
+    // JSON-LD Structured Data
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Website Development for Tile Manufacturers",
+      "description": "Professional website development services tailored for tile and ceramic manufacturers in Gujarat",
+      "url": "https://lemonsoftwaresolution.com/website-development",
+      "provider": {
+        "@type": "Organization",
+        "name": "Lemon Software Solution"
+      },
+      "serviceType": "Website Development",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Gujarat, India"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Website Development Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Business Website Development"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Responsive Design"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service", 
+              "name": "Custom Design"
+            }
+          }
+        ]
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Tile and Ceramic Manufacturers"
+      }
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
 }, []);
 
 

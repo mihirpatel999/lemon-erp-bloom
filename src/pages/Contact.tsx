@@ -112,14 +112,102 @@ const Contact = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     
-    // Update page title for SEO
-    document.title = "Contact Lemon Software Solution - ERP Consultation | Ahmedabad Morbi";
+    // Meta Tags
+    document.title = "Contact ERP Consultation | Call +91-9979747563 Ahmedabad Gujarat";
     
-    // Add page-specific meta description
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute('content', 'Contact Lemon Software Solution for ERP consultation. Call +91-9723822139 or email lemonsoftinfo@gmail.com. Serving Morbi & Ahmedabad ceramic manufacturers.');
+      metaDesc.setAttribute('content', 'Contact Lemon Software for ERP consultation. Call +91-9979747563, email lemonsoftinfo@gmail.com. Free consultation for tile manufacturers in Gujarat.');
     }
+
+    // Canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://lemonsoftwaresolution.com/contact');
+
+    // Open Graph Tags
+    const updateMetaTag = (property: string, content: string) => {
+      let meta = document.querySelector(`meta[property="${property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    updateMetaTag('og:title', 'Contact ERP Consultation | Call +91-9979747563 Ahmedabad Gujarat');
+    updateMetaTag('og:description', 'Contact Lemon Software for ERP consultation. Call +91-9979747563, email lemonsoftinfo@gmail.com.');
+    updateMetaTag('og:image', 'https://lemonsoftwaresolution.com/og-image-contact.jpg');
+    updateMetaTag('og:url', 'https://lemonsoftwaresolution.com/contact');
+    updateMetaTag('og:type', 'website');
+
+    // Twitter Card Tags
+    const updateTwitterTag = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    updateTwitterTag('twitter:card', 'summary_large_image');
+    updateTwitterTag('twitter:title', 'Contact ERP Consultation | Call +91-9979747563 Ahmedabad Gujarat');
+    updateTwitterTag('twitter:description', 'Contact Lemon Software for ERP consultation. Call +91-9979747563, email lemonsoftinfo@gmail.com.');
+    updateTwitterTag('twitter:image', 'https://lemonsoftwaresolution.com/og-image-contact.jpg');
+
+    // JSON-LD Structured Data
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Lemon Software Solution",
+      "description": "Get in touch with our ERP experts for consultation and custom software solutions",
+      "url": "https://lemonsoftwaresolution.com/contact",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Lemon Software Solution",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+91-9979747563",
+            "contactType": "sales",
+            "areaServed": "IN",
+            "availableLanguage": ["English", "Hindi", "Gujarati"]
+          },
+          {
+            "@type": "ContactPoint",
+            "email": "lemonsoftinfo@gmail.com",
+            "contactType": "customer support"
+          }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ahmedabad",
+          "addressRegion": "Gujarat",
+          "addressCountry": "IN"
+        },
+        "openingHours": "Mo-Fr 10:00-18:00",
+        "serviceArea": {
+          "@type": "Place",
+          "name": "India"
+        }
+      }
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
   }, []);
 
   return (

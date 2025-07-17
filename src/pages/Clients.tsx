@@ -69,7 +69,113 @@ const Clients = () => {
 
 
    useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    // Meta Tags
+    document.title = "Client Success Stories | Crystal Tiles Adicon & 50+ Happy Clients";
+    
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Real client success stories from Crystal Tiles, Adicon Ceramica & 50+ tile manufacturers. See how our ERP solutions transformed their business operations.');
+    }
+
+    // Canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://lemonsoftwaresolution.com/clients');
+
+    // Open Graph Tags
+    const updateMetaTag = (property: string, content: string) => {
+      let meta = document.querySelector(`meta[property="${property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    updateMetaTag('og:title', 'Client Success Stories | Crystal Tiles Adicon & 50+ Happy Clients');
+    updateMetaTag('og:description', 'Real client success stories from Crystal Tiles, Adicon Ceramica & 50+ tile manufacturers.');
+    updateMetaTag('og:image', 'https://lemonsoftwaresolution.com/og-image-clients.jpg');
+    updateMetaTag('og:url', 'https://lemonsoftwaresolution.com/clients');
+    updateMetaTag('og:type', 'website');
+
+    // Twitter Card Tags
+    const updateTwitterTag = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    updateTwitterTag('twitter:card', 'summary_large_image');
+    updateTwitterTag('twitter:title', 'Client Success Stories | Crystal Tiles Adicon & 50+ Happy Clients');
+    updateTwitterTag('twitter:description', 'Real client success stories from Crystal Tiles, Adicon Ceramica & 50+ tile manufacturers.');
+    updateTwitterTag('twitter:image', 'https://lemonsoftwaresolution.com/og-image-clients.jpg');
+
+    // JSON-LD Structured Data
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Client Success Stories - Lemon Software Solution",
+      "description": "Real testimonials and success stories from tile and ceramic manufacturers using our ERP solutions",
+      "url": "https://lemonsoftwaresolution.com/clients",
+      "review": [
+        {
+          "@type": "Review",
+          "reviewBody": "LEMON SOFTWARE SOLUTION's ERP solution completely transformed our production planning and inventory management. We've seen 30% improvement in efficiency since implementation.",
+          "author": {
+            "@type": "Person",
+            "name": "J.R.Patel"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "itemReviewed": {
+            "@type": "Organization",
+            "name": "Crystal Ceramic Industries Ltd"
+          }
+        },
+        {
+          "@type": "Review",
+          "reviewBody": "The custom ERP modules perfectly fit our business needs. The support team is excellent and always available when needed.",
+          "author": {
+            "@type": "Person",
+            "name": "Sarthak Patel"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "itemReviewed": {
+            "@type": "Organization",
+            "name": "Adicon Ceramica Tiles Private Limited"
+          }
+        }
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Lemon Software Solution"
+      }
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
 }, []);
 
   return (

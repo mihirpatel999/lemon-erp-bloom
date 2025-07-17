@@ -48,15 +48,57 @@ const Home = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     
-    // SEO Meta tags
-    document.title = "Best ERP Software for Indian Businesses | GST Billing & Inventory Management - Lemon Software Solution";
+    // Meta Tags
+    document.title = "Best ERP Software India | GST Billing Inventory Management";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Leading ERP software company in India providing GST billing, inventory management, accounting solutions for small & medium businesses. Custom ERP development with 10+ years experience.');
+      metaDescription.setAttribute('content', 'Leading ERP software company in India. GST billing, inventory, accounting for SMEs. Serving Morbi tile manufacturers. 10+ years experience, 50+ happy clients.');
     }
+
+    // Add canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://lemonsoftwaresolution.com/');
+
+    // Open Graph Tags
+    const updateMetaTag = (property: string, content: string) => {
+      let meta = document.querySelector(`meta[property="${property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    updateMetaTag('og:title', 'Best ERP Software India | GST Billing Inventory Management');
+    updateMetaTag('og:description', 'Leading ERP software company in India. GST billing, inventory, accounting for SMEs. Serving Morbi tile manufacturers.');
+    updateMetaTag('og:image', 'https://lemonsoftwaresolution.com/og-image-home.jpg');
+    updateMetaTag('og:url', 'https://lemonsoftwaresolution.com/');
+    updateMetaTag('og:type', 'website');
+
+    // Twitter Card Tags
+    const updateTwitterTag = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    updateTwitterTag('twitter:card', 'summary_large_image');
+    updateTwitterTag('twitter:title', 'Best ERP Software India | GST Billing Inventory Management');
+    updateTwitterTag('twitter:description', 'Leading ERP software company in India. GST billing, inventory, accounting for SMEs.');
+    updateTwitterTag('twitter:image', 'https://lemonsoftwaresolution.com/og-image-home.jpg');
     
-    // Add structured data for homepage
+    // JSON-LD Structured Data
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.textContent = JSON.stringify({
@@ -66,19 +108,31 @@ const Home = () => {
       "description": "Leading ERP software company providing GST billing, inventory management, and custom software solutions for Indian businesses",
       "url": "https://lemonsoftwaresolution.com/",
       "logo": "https://lemonsoftwaresolution.com/logo.png",
+      "image": "https://lemonsoftwaresolution.com/og-image-home.jpg",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+91-9723822139",
-        "contactType": "sales"
+        "telephone": "+91-9979747563",
+        "contactType": "sales",
+        "areaServed": "IN"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ahmedabad",
+        "addressRegion": "Gujarat",
+        "addressCountry": "IN"
       },
       "areaServed": "India",
       "serviceType": ["ERP Software", "GST Billing Software", "Inventory Management", "Accounting Software", "Custom Software Development"],
       "foundingDate": "2014",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Morbi",
-        "addressRegion": "Gujarat",
-        "addressCountry": "IN"
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "50"
+      },
+      "offers": {
+        "@type": "Offer",
+        "description": "Custom ERP Solutions for Indian SMEs",
+        "availability": "https://schema.org/InStock"
       }
     });
     document.head.appendChild(script);

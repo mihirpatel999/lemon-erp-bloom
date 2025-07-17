@@ -41,14 +41,96 @@ const About = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     
-    // Update page title for SEO
-    document.title = "About Lemon Software Solution - 10+ Years ERP Experience | Morbi Ahmedabad";
+    // Meta Tags
+    document.title = "About Lemon Software - 10+ Years ERP Experience Morbi Gujarat";
     
-    // Add page-specific meta description
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute('content', 'Learn about Lemon Software Solution - 10+ years of ERP excellence serving Crystal Tiles, Adicon Ceramica & 50+ manufacturers in Morbi & Ahmedabad since 2014.');
+      metaDesc.setAttribute('content', 'Founded 2014 in Gujarat. 10+ years ERP excellence serving Crystal Tiles, Adicon & 50+ tile manufacturers. Expert team providing reliable business solutions.');
     }
+
+    // Canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://lemonsoftwaresolution.com/about');
+
+    // Open Graph Tags
+    const updateMetaTag = (property: string, content: string) => {
+      let meta = document.querySelector(`meta[property="${property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    updateMetaTag('og:title', 'About Lemon Software - 10+ Years ERP Experience Morbi Gujarat');
+    updateMetaTag('og:description', 'Founded 2014 in Gujarat. 10+ years ERP excellence serving Crystal Tiles, Adicon & 50+ tile manufacturers.');
+    updateMetaTag('og:image', 'https://lemonsoftwaresolution.com/og-image-about.jpg');
+    updateMetaTag('og:url', 'https://lemonsoftwaresolution.com/about');
+    updateMetaTag('og:type', 'website');
+
+    // Twitter Card Tags
+    const updateTwitterTag = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+
+    updateTwitterTag('twitter:card', 'summary_large_image');
+    updateTwitterTag('twitter:title', 'About Lemon Software - 10+ Years ERP Experience Morbi Gujarat');
+    updateTwitterTag('twitter:description', 'Founded 2014 in Gujarat. 10+ years ERP excellence serving Crystal Tiles, Adicon & 50+ tile manufacturers.');
+    updateTwitterTag('twitter:image', 'https://lemonsoftwaresolution.com/og-image-about.jpg');
+
+    // JSON-LD Structured Data
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Lemon Software Solution",
+      "description": "10+ years of ERP excellence serving tile and ceramic manufacturers in Gujarat since 2014",
+      "url": "https://lemonsoftwaresolution.com/about",
+      "foundingDate": "2014",
+      "foundingLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ahmedabad",
+          "addressRegion": "Gujarat",
+          "addressCountry": "IN"
+        }
+      },
+      "employee": [
+        {
+          "@type": "Person",
+          "jobTitle": "Expert Developers",
+          "description": "15+ expert developers"
+        }
+      ],
+      "award": "100% Project Success Rate",
+      "knowsAbout": ["ERP Development", "Tile Manufacturing", "Inventory Management", "GST Billing"],
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Lemon Software Solution"
+      }
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
   }, []);
 
 
