@@ -80,7 +80,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Lemon Software. All rights reserved. Trusted by major tile manufacturers in India.
+            © 2024 Lemon Software Solution. All rights reserved. Trusted by major tile manufacturers in India.
           </p>
         </div>
       </div>
