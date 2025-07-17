@@ -338,8 +338,17 @@ const CRM = () => {
     }
   ];
   useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}, []);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    // Update page title for SEO
+    document.title = "CRM Software - Business Management Suite | Lemon Software Solution";
+    
+    // Add page-specific meta description
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Complete CRM & business management software with sales tracking, expense management, inventory control. Designed for tile industry by Lemon Software Solution.');
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">

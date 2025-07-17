@@ -107,9 +107,18 @@ const ERPModules = () => {
     "Bluezone Vitrified Pvt Ltd"
   ];
   
- useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}, []);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    // Update page title for SEO
+    document.title = "ERP Modules - Inventory, Sales, Production | Lemon Software Solution";
+    
+    // Add page-specific meta description
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Comprehensive ERP modules for tile industry - Inventory Management, Sales, Production Planning, Financial Management. Trusted by Crystal Tiles & 50+ manufacturers.');
+    }
+  }, []);
 
 
   return (

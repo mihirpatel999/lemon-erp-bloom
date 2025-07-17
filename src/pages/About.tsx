@@ -39,8 +39,17 @@ const About = () => {
     { number: "10+", label: "Years Experience" }
   ];
   useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}, []);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    // Update page title for SEO
+    document.title = "About Lemon Software Solution - 10+ Years ERP Experience | Morbi Ahmedabad";
+    
+    // Add page-specific meta description
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Learn about Lemon Software Solution - 10+ years of ERP excellence serving Crystal Tiles, Adicon Ceramica & 50+ manufacturers in Morbi & Ahmedabad since 2014.');
+    }
+  }, []);
 
 
   return (

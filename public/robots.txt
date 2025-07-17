@@ -1,14 +1,33 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://lemonsoftwaresolution.com/sitemap.xml
+
+# Specific crawlers
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
-User-agent: Twitterbot
+User-agent: Slurp
 Allow: /
+Crawl-delay: 1
 
-User-agent: facebookexternalhit
-Allow: /
+# Block access to sensitive areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /.env
+Disallow: /config/
 
-User-agent: *
+# Allow access to important pages
 Allow: /
+Allow: /about
+Allow: /erp-modules
+Allow: /crm
+Allow: /clients
+Allow: /web-development
+Allow: /contact

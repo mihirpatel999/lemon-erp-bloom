@@ -109,9 +109,18 @@ const Contact = () => {
     { icon: CheckCircle, label: "24/7", desc: "Support" }
   ];
 
-useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}, []);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    // Update page title for SEO
+    document.title = "Contact Lemon Software Solution - ERP Consultation | Ahmedabad Morbi";
+    
+    // Add page-specific meta description
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', 'Contact Lemon Software Solution for ERP consultation. Call +91-9723822139 or email lemonsoftinfo@gmail.com. Serving Morbi & Ahmedabad ceramic manufacturers.');
+    }
+  }, []);
 
   return (
     <div className="min-h-screen">

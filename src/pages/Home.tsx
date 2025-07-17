@@ -46,8 +46,31 @@ const Home = () => {
   ];
 
   useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-}, []);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    // Add structured data for homepage
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Lemon Software Solution - ERP Software for Tile Industry",
+      "description": "Leading ERP software provider for ceramic and tile manufacturers in Morbi and Ahmedabad with 10+ years experience",
+      "url": "https://lemonsoftwaresolution.com/",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Lemon Software Solution",
+        "description": "10+ years experience serving Crystal Tiles, Adicon Ceramica and 50+ ceramic manufacturers"
+      }
+    });
+    document.head.appendChild(script);
+    
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
 
 
   return (
