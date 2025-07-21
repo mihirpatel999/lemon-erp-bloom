@@ -12,7 +12,8 @@ import {
   Building,
   Users,
   Globe,
-  CheckCircle
+  CheckCircle,
+  MessageCircle
 } from "lucide-react";
 
 // ... existing code ...
@@ -385,10 +386,30 @@ const Contact = () => {
                     <Phone className="w-12 h-12 mx-auto mb-4" />
                     <h3 className="text-xl font-bold mb-2">Need Immediate Help?</h3>
                     <p className="mb-4 opacity-90">Call us directly for urgent requirements</p>
-                    <Button variant="outline" size="lg" className="bg-white/10 border-white text-white hover:bg-white hover:text-gray-900">
-                      <Phone className="w-4 h-4 mr-2" />
-                      +919979747563
-                    </Button>
+                    <div className="space-y-3">
+                      <Button 
+                        variant="outline" 
+                        size="lg" 
+                        className="bg-white/10 border-white text-white hover:bg-white hover:text-gray-900 w-full"
+                        asChild
+                      >
+                        <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
+                          <Phone className="w-4 h-4 mr-2" />
+                          +919979747563
+                        </a>
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        size="lg" 
+                        className="bg-white/10 border-white text-white hover:bg-white hover:text-gray-900 w-full"
+                        asChild
+                      >
+                        <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
+                          <MessageCircle className="w-4 h-4 mr-2" />
+                          WhatsApp पर चैट करें
+                        </a>
+                      </Button>
+                    </div>
                   </CardContent>
                 </Card>
               </div>

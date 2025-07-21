@@ -324,8 +324,10 @@ const WebDevelopment = () => {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
-            <Button variant="outline" size="xl" className="bg-white/10 border-white text-white hover:bg-white hover:text-gray-900">
-              Call +919979747563
+            <Button variant="outline" size="xl" className="bg-white/10 border-white text-white hover:bg-white hover:text-gray-900" asChild>
+              <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
+                Call +919979747563
+              </a>
             </Button>
           </div>
         </div>

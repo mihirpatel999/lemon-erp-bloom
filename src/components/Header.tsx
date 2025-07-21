@@ -40,7 +40,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -54,25 +54,28 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
+          </div>
+
+          {/* Contact Buttons */}
+          <div className="hidden md:flex items-center space-x-3">
             <Button 
               variant="gradient" 
-              size="sm" 
-              className="ml-4"
+              size="sm"
               asChild
             >
               <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
                 <Phone className="w-4 h-4 mr-2" />
-                +91 9979747563
+                Call Now
               </a>
             </Button>
             <Button 
               variant="outline" 
-              size="icon" 
-              className="ml-2"
+              size="sm"
               asChild
             >
               <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4 mr-2" />
+                WhatsApp
               </a>
             </Button>
           </div>

@@ -191,10 +191,10 @@ const Clients = () => {
               Trusted by leading tile and ceramic manufacturers in Morbi and across Gujarat
             </p>
             <div className="flex items-center justify-center space-x-6 text-lg">
-              <div className="flex items-center space-x-2">
-                <Star className="w-5 h-5 text-yellow-300" />
-                <span>10+ Happy Clients</span>
-              </div>
+                <div className="flex items-center space-x-2">
+                  <Star className="w-5 h-5 text-yellow-300" />
+                  <span>50+ Happy Clients</span>
+                </div>
               <div className="flex items-center space-x-2">
                 <Building className="w-5 h-5 text-yellow-300" />
                 <span>10+ Years Experience</span>
