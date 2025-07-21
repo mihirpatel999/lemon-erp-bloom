@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Calendar } from "lucide-react";
+import { MapPin, Phone, Mail, Calendar, MessageCircle } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -60,11 +60,29 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="text-gray-300 text-sm">+91 9979747563</span>
+                <a 
+                  href="https://wa.me/919979747563" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 text-sm hover:text-primary transition-colors"
+                >
+                  +91 9979747563
+                </a>
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
                 <span className="text-gray-300 text-sm">+91 9998815125</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <MessageCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                <a 
+                  href="https://wa.me/919979747563" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 text-sm hover:text-primary transition-colors"
+                >
+                  WhatsApp पर चैट करें
+                </a>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />

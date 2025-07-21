@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, MessageCircle } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,9 +54,26 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <Button variant="gradient" size="sm" className="ml-4">
-              <Phone className="w-4 h-4 mr-2" />
-              +91 9979747563
+            <Button 
+              variant="gradient" 
+              size="sm" 
+              className="ml-4"
+              asChild
+            >
+              <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
+                <Phone className="w-4 h-4 mr-2" />
+                +91 9979747563
+              </a>
+            </Button>
+            <Button 
+              variant="outline" 
+              size="icon" 
+              className="ml-2"
+              asChild
+            >
+              <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-4 h-4" />
+              </a>
             </Button>
           </div>
 
@@ -88,10 +105,18 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <div className="px-3 py-2">
-                <Button variant="gradient" size="sm" className="w-full">
-                  <Phone className="w-4 h-4 mr-2" />
-                  +91 9979747563
+              <div className="px-3 py-2 space-y-2">
+                <Button variant="gradient" size="sm" className="w-full" asChild>
+                  <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
+                    <Phone className="w-4 h-4 mr-2" />
+                    +91 9979747563
+                  </a>
+                </Button>
+                <Button variant="outline" size="sm" className="w-full" asChild>
+                  <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    WhatsApp पर संपर्क करें
+                  </a>
                 </Button>
               </div>
             </div>
