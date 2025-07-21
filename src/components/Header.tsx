@@ -63,7 +63,7 @@ const Header = () => {
               size="sm"
               asChild
             >
-              <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
+              <a href="tel:+919979747563">
                 <Phone className="w-4 h-4 mr-2" />
                 Call Now
               </a>
@@ -75,7 +75,7 @@ const Header = () => {
             >
               <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-4 h-4 mr-2" />
-                WhatsApp
+                Chat with us
               </a>
             </Button>
           </div>
@@ -110,15 +110,15 @@ const Header = () => {
               ))}
               <div className="px-3 py-2 space-y-2">
                 <Button variant="gradient" size="sm" className="w-full" asChild>
-                  <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
+                  <a href="tel:+919979747563">
                     <Phone className="w-4 h-4 mr-2" />
-                    +91 9979747563
+                    Call Now
                   </a>
                 </Button>
                 <Button variant="outline" size="sm" className="w-full" asChild>
                   <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-4 h-4 mr-2" />
-                    WhatsApp पर संपर्क करें
+                    Chat with us
                   </a>
                 </Button>
               </div>

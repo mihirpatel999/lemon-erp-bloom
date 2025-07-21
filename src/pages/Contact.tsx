@@ -393,9 +393,9 @@ const Contact = () => {
                         className="bg-white/10 border-white text-white hover:bg-white hover:text-gray-900 w-full"
                         asChild
                       >
-                        <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
+                        <a href="tel:+919979747563">
                           <Phone className="w-4 h-4 mr-2" />
-                          +919979747563
+                          Call Now
                         </a>
                       </Button>
                       <Button 
@@ -406,7 +406,7 @@ const Contact = () => {
                       >
                         <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
                           <MessageCircle className="w-4 h-4 mr-2" />
-                          WhatsApp पर चैट करें
+                          Chat with us
                         </a>
                       </Button>
                     </div>

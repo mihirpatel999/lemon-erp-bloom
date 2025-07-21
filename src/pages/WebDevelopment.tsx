@@ -11,7 +11,8 @@ import {
   Code,
   Headphones,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
+  Phone
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -325,7 +326,8 @@ const WebDevelopment = () => {
               </Link>
             </Button>
             <Button variant="outline" size="xl" className="bg-white/10 border-white text-white hover:bg-white hover:text-gray-900" asChild>
-              <a href="https://wa.me/919979747563" target="_blank" rel="noopener noreferrer">
+              <a href="tel:+919979747563">
+                <Phone className="w-4 h-4 mr-2" />
                 Call +919979747563
               </a>
             </Button>

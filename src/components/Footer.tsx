@@ -61,9 +61,7 @@ const Footer = () => {
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
                 <a 
-                  href="https://wa.me/919979747563" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                  href="tel:+919979747563" 
                   className="text-gray-300 text-sm hover:text-primary transition-colors"
                 >
                   +91 9979747563
@@ -81,7 +79,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-gray-300 text-sm hover:text-primary transition-colors"
                 >
-                  WhatsApp पर चैट करें
+                  Chat with us
                 </a>
               </li>
               <li className="flex items-center space-x-2">
